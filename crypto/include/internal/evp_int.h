@@ -196,6 +196,7 @@ struct evp_md_st {
 
     /* New structure members */
     /* TODO(3.0): Remove above comment when legacy has gone */
+    char *name;
     OSSL_PROVIDER *prov;
     CRYPTO_REF_COUNT refcnt;
     CRYPTO_RWLOCK *lock;
@@ -246,6 +247,7 @@ struct evp_cipher_st {
 
     /* New structure members */
     /* TODO(3.0): Remove above comment when legacy has gone */
+    char *name;
     OSSL_PROVIDER *prov;
     CRYPTO_REF_COUNT refcnt;
     CRYPTO_RWLOCK *lock;

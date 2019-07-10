@@ -1081,7 +1081,8 @@ int EVP_CIPHER_CTX_copy(EVP_CIPHER_CTX *out, const EVP_CIPHER_CTX *in)
     return 1;
 }
 
-static void *evp_cipher_from_dispatch(const OSSL_DISPATCH *fns,
+static void *evp_cipher_from_dispatch(const char *name,
+                                      const OSSL_DISPATCH *fns,
                                       OSSL_PROVIDER *prov)
 {
     EVP_CIPHER *cipher = NULL;
@@ -1093,6 +1094,8 @@ static void *evp_cipher_from_dispatch(const OSSL_DISPATCH *fns,
      */
     if ((cipher = EVP_CIPHER_meth_new(0, 0, 0)) == NULL)
         return NULL;
+
+    cipher->name = OPENSSL_strdup(name);
 
     for (; fns->function_id != 0; fns++) {
         switch (fns->function_id) {
