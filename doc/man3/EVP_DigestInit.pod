@@ -53,6 +53,7 @@ EVP_MD_CTX_pkey_ctx, EVP_MD_CTX_set_pkey_ctx - EVP digest routines
 
  const EVP_MD *EVP_MD_CTX_md(const EVP_MD_CTX *ctx);
  const char *EVP_MD_CTX_name(const EVP_MD_CTX *ctx);
+ const OSSL_PROVIDER *EVP_MD_provider(const EVP_MD *md);
  int EVP_MD_CTX_size(const EVP_MD *ctx);
  int EVP_MD_CTX_block_size(const EVP_MD *ctx);
  int EVP_MD_CTX_type(const EVP_MD *ctx);
@@ -178,6 +179,11 @@ be initialized.
 EVP_MD_CTX_name()
 
 Return the name of the given message digest.
+
+=item EVP_CIPHER_provider()
+
+returns a B<OSSL_PROVIDER> pointer to the provider that implements the given
+B<EVP_MD>.
 
 =item EVP_MD_size(),
 EVP_MD_CTX_size()
