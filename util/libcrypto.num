@@ -4678,3 +4678,5 @@ BN_rand_ex                              4783	3_0_0	EXIST::FUNCTION:
 BN_priv_rand_ex                         4784	3_0_0	EXIST::FUNCTION:
 BN_rand_range_ex                        4785	3_0_0	EXIST::FUNCTION:
 BN_priv_rand_range_ex                   4786	3_0_0	EXIST::FUNCTION:
+EVP_MD_name                             4787	3_0_0	EXIST::FUNCTION:
+EVP_CIPHER_name                         4788	3_0_0	EXIST::FUNCTION:

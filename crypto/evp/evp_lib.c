@@ -396,6 +396,17 @@ int EVP_CIPHER_CTX_nid(const EVP_CIPHER_CTX *ctx)
     return ctx->cipher->nid;
 }
 
+const char *EVP_CIPHER_name(const EVP_CIPHER *cipher)
+{
+    if (cipher->prov != NULL)
+        return cipher->name;
+#ifndef FIPS_MODE
+    return OBJ_nid2sn(EVP_CIPHER_nid(cipher));
+#else
+    return NULL;
+#endif
+}
+
 int EVP_CIPHER_mode(const EVP_CIPHER *cipher)
 {
     int v = EVP_CIPHER_flags(cipher) & EVP_CIPH_MODE;
@@ -406,6 +417,17 @@ int EVP_CIPHER_mode(const EVP_CIPHER *cipher)
     return ok != 0 ? v: 0;
 }
 
+
+const char *EVP_MD_name(const EVP_MD *md)
+{
+    if (md->prov != NULL)
+        return md->name;
+#ifndef FIPS_MODE
+    return OBJ_nid2sn(EVP_MD_nid(md));
+#else
+    return NULL;
+#endif
+}
 
 int EVP_MD_block_size(const EVP_MD *md)
 {
