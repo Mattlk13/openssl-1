@@ -228,6 +228,9 @@ OSSL_CORE_MAKE_FUNC(int, OP_cipher_ctx_get_params, (void *cctx,
 OSSL_CORE_MAKE_FUNC(int, OP_cipher_ctx_set_params, (void *cctx,
                                                     const OSSL_PARAM params[]))
 
+/* Highest known operation number */
+# define OSSL_OP__HIGHEST                            2
+
 # ifdef __cplusplus
 }
 # endif
