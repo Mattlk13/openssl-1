@@ -4683,3 +4683,5 @@ EVP_CIPHER_name                         4788	3_0_0	EXIST::FUNCTION:
 EVP_MD_provider                         4789	3_0_0	EXIST::FUNCTION:
 EVP_CIPHER_provider                     4790	3_0_0	EXIST::FUNCTION:
 OSSL_PROVIDER_name                      4791	3_0_0	EXIST::FUNCTION:
+EVP_CIPHER_do_all_ex                    4792	3_0_0	EXIST::FUNCTION:
+EVP_MD_do_all_ex                        4793	3_0_0	EXIST::FUNCTION:
